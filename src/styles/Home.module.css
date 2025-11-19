@@ -152,6 +152,7 @@
 }
 
 .hero .container {
+  padding-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,21 +167,7 @@
   padding: 0 2rem;
 }
 
-/* Hero Badge */
-.heroBadge {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
-  border: 1px solid #e2e8f0;
-  padding: 0.5rem 1.5rem;
-  border-radius: 50px;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: #475569;
-  margin-bottom: 2rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-}
+
 
 /* Hero Title */
 .heroTitle {
@@ -356,6 +343,9 @@
 
 /* Адаптивність */
 @media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
   .heroTitle {
     font-size: 2.5rem;
   }
@@ -724,8 +714,21 @@
   flex-direction: column;
   gap: 1.5rem;
 }
+.contactForm select  {
+  padding: 15px;
+  border: 2px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: white;
+}
+.contactForm select:focus {
+   outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
 
-.contactForm input,
+.contactForm input, 
 .contactForm textarea {
   padding: 15px;
   border: 2px solid #e5e7eb;
@@ -1467,3 +1470,773 @@
   }
 }
 
+/* Course Actions */
+.courseActions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.detailsButton {
+  flex: 1;
+  background: transparent;
+  color: #3b82f6;
+  border: 1.5px solid #3b82f6;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  text-align: center;
+  display: block;
+}
+
+.detailsButton:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.enrollButton {
+  flex: 1;
+  background: #f59e0b;
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.enrollButton:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.3);
+}
+
+/* Modal Styles */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modalContent {
+  background: white;
+  border-radius: 16px;
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modalHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.modalHeader h3 {
+  margin: 0;
+  color: #1f2937;
+  font-size: 1.25rem;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6b7280;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.closeButton:hover {
+  color: #374151;
+}
+
+/* Application Form */
+.applicationForm {
+  padding: 2rem;
+}
+
+.formGroup {
+  margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.formGroup input:disabled,
+.formGroup textarea:disabled {
+  background-color: #f9fafb;
+  cursor: not-allowed;
+}
+
+.errorMessage {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border: 1px solid #fecaca;
+}
+
+.successMessage {
+  text-align: center;
+  padding: 2rem;
+}
+
+.successMessage h3 {
+  color: #059669;
+  margin-bottom: 1rem;
+}
+
+.successMessage p {
+  color: #6b7280;
+  margin-bottom: 1.5rem;
+}
+
+.formActions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cancelButton {
+  flex: 1;
+  background: #f3f4f6;
+  color: #374151;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cancelButton:hover:not(:disabled) {
+  background: #e5e7eb;
+}
+
+
+.submitButton:disabled {
+  background: #9ca3af;
+  cursor: not-allowed;
+}
+
+/* ApplicationForm.module.css */
+
+/* ApplicationForm.module.css */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  max-width: 500px;
+  width: 100%;
+  max-height: 90vh;
+  overflow: auto; /* Зміна з auto на hidden */
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.3s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.headerModal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 12px 12px 0 0;
+  position: relative;
+  min-height: 60px;
+  flex-shrink: 0; /* Запобігає стисканню хедера */
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  flex: 1;
+  padding-right: 40px; /* Місце для кнопки закриття */
+}
+
+.closeButton {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  flex-shrink: 0;
+}
+
+.closeButton:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.courseInfo {
+  padding: 20px 24px;
+  background: #f8fafc;
+  border-bottom: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.courseInfo h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.courseDetails {
+  /* display: flex;
+  align-items: center; */
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.courseLevel,
+.courseDuration,
+.coursePrice {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-right: 10px;
+}
+
+.courseLevel {
+  background: #dbeafe;
+  color: #1e40af;
+  border: 1px solid #bfdbfe;
+}
+
+.courseDuration {
+  display: inline-block;
+  background: #f0f9ff;
+  color: #0369a1;
+  border: 1px solid #bae6fd;
+}
+
+.coursePrice {
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+
+.form {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.formFields {
+  flex: 1;
+}
+
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.formGroup label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 500;
+  color: #374151;
+  font-size: 0.875rem;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.formGroup input:focus,
+.formGroup textarea:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
+  color: #9ca3af;
+}
+
+.formGroup textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.formActions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #e5e7eb;
+  flex-shrink: 0;
+}
+
+.cancelButton,
+.submitButton {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 120px;
+}
+
+.cancelButton {
+  background: #f3f4f6;
+  color: #374151;
+  border: 2px solid #d1d5db;
+}
+
+.cancelButton:hover:not(:disabled) {
+  background: #e5e7eb;
+  border-color: #9ca3af;
+}
+
+.submitButton {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: 2px solid transparent;
+}
+
+.submitButton:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.cancelButton:disabled,
+.submitButton:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Success Message Styles */
+.successMessage {
+  padding: 40px 24px;
+  text-align: center;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.successIcon {
+  width: 64px;
+  height: 64px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin: 0 auto 20px;
+  animation: bounceIn 0.6s ease-out;
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.successMessage h3 {
+  margin: 0 0 12px 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #065f46;
+}
+
+.successMessage p {
+  margin: 0 0 24px 0;
+  color: #374151;
+  line-height: 1.6;
+  font-size: 1rem;
+  max-width: 400px;
+}
+
+.successButton {
+  padding: 12px 32px;
+  background: #10b981;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.successButton:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.4);
+}
+
+/* Error State Styles */
+.errorOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.errorModal {
+  background: white;
+  border-radius: 12px;
+  padding: 32px;
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.errorModal h3 {
+  margin: 0 0 12px 0;
+  color: #dc2626;
+  font-size: 1.5rem;
+}
+
+.errorModal p {
+  margin: 0 0 24px 0;
+  color: #374151;
+}
+
+.errorModal button {
+  padding: 10px 24px;
+  background: #dc2626;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.errorModal button:hover {
+  background: #b91c1c;
+}
+
+/* Loading State */
+.submitButton:disabled {
+  position: relative;
+  overflow: hidden;
+}
+
+.submitButton:disabled::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .overlay {
+    padding: 10px;
+  }
+  
+  .modal {
+    max-height: 95vh;
+  }
+  
+  .header {
+    padding: 16px 20px;
+    min-height: 56px;
+  }
+  
+  .header h2 {
+    font-size: 1.125rem;
+    padding-right: 35px;
+  }
+  
+  .closeButton {
+    right: 16px;
+    width: 28px;
+    height: 28px;
+    font-size: 1.25rem;
+  }
+  
+  .courseInfo {
+    padding: 16px 20px;
+  }
+  
+  .courseInfo h3 {
+    font-size: 1.125rem;
+  }
+  
+  .courseDetails {
+    gap: 8px;
+  }
+  
+  .courseLevel,
+  .courseDuration,
+  .coursePrice {
+    font-size: 0.8rem;
+    padding: 3px 10px;
+  }
+  
+  .form {
+    padding: 20px;
+  }
+  
+  .formActions {
+    flex-direction: column-reverse;
+    gap: 8px;
+  }
+  
+  .cancelButton,
+  .submitButton {
+    min-width: auto;
+    width: 100%;
+  }
+  
+  .successMessage {
+    padding: 32px 20px;
+  }
+  
+  .successIcon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.5rem;
+  }
+  
+  .successMessage h3 {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 14px 16px;
+  }
+  
+  .header h2 {
+    font-size: 1rem;
+    padding-right: 30px;
+  }
+  
+  .closeButton {
+    right: 12px;
+    width: 24px;
+    height: 24px;
+    font-size: 1.125rem;
+  }
+  
+  .courseDetails {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .modal {
+    background: #1f2937;
+    color: #f9fafb;
+  }
+  
+  .courseInfo {
+    background: #374151;
+  }
+  
+  .courseInfo h3 {
+    color: #f9fafb;
+  }
+  
+  .formGroup label {
+    color: #e5e7eb;
+  }
+  
+  .formGroup input,
+  .formGroup textarea {
+    background: #374151;
+    border-color: #4b5563;
+    color: #f9fafb;
+  }
+  
+  .formGroup input::placeholder,
+  .formGroup textarea::placeholder {
+    color: #6b7280;
+  }
+  
+  .cancelButton {
+    background: #4b5563;
+    color: #e5e7eb;
+    border-color: #6b7280;
+  }
+  
+  .cancelButton:hover:not(:disabled) {
+    background: #6b7280;
+  }
+  
+  .successMessage {
+    background: #1f2937;
+  }
+  
+  .successMessage p {
+    color: #e5e7eb;
+  }
+}
+
+/* Accessibility improvements */
+.formGroup input:focus-visible,
+.formGroup textarea:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}
+
+.closeButton:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.cancelButton:focus-visible,
+.submitButton:focus-visible,
+.successButton:focus-visible {
+  outline: 2px solid #667eea;
+  outline-offset: 2px;
+}

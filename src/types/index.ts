@@ -18,8 +18,8 @@ export interface ContactFormData {
   email: string;
   phone: string;
   message: string;
+  course: string; // Додано поле course
 }
-
 export interface Course {
   id: number;
   title: string;
@@ -29,6 +29,14 @@ export interface Course {
   price: string;
   features: string[];
   icon: string;
+}
+
+export interface ApplicationData {
+      name:string,
+      email: string,
+      phone: string,
+      message: string,
+      status: string
 }
 
 export interface Course {

@@ -1,0 +1,297 @@
+.adminPanel {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.adminHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.adminHeader h1 {
+  color: #333;
+  margin: 0;
+}
+
+.refreshButton {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.refreshButton:hover:not(:disabled) {
+  background: #0056b3;
+}
+
+.refreshButton:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+}
+
+.noApplications {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
+  background: #f8f9fa;
+  border-radius: 8px;
+}
+
+.errorMessage {
+  background: #f8d7da;
+  color: #721c24;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.retryButton {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.applicationsList {
+  display: grid;
+  gap: 20px;
+}
+
+.applicationCard {
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.applicationHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.applicationHeader h3 {
+  margin: 0;
+  color: #333;
+}
+
+.status {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.status.pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status.approved {
+  background: #d1edff;
+  color: #004085;
+}
+
+.status.rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.applicationDetails p {
+  margin: 8px 0;
+  color: #555;
+}
+
+.applicationActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.approveButton, .rejectButton, .pendingButton {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.approveButton {
+  background: #28a745;
+  color: white;
+}
+
+.approveButton:hover:not(:disabled) {
+  background: #218838;
+}
+
+.rejectButton {
+  background: #dc3545;
+  color: white;
+}
+
+.rejectButton:hover:not(:disabled) {
+  background: #c82333;
+}
+
+.pendingButton {
+  background: #ffc107;
+  color: #212529;
+}
+
+.pendingButton:hover:not(:disabled) {
+  background: #e0a800;
+}
+
+.approveButton:disabled,
+.rejectButton:disabled,
+.pendingButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Стилі для сортування */
+.sortControls {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: #f5f5f5;
+  border-radius: 8px;
+}
+
+.sortControls h3 {
+  margin: 0 0 1rem 0;
+  color: #333;
+}
+
+.sortButtons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.sortButton {
+  padding: 0.5rem 1rem;
+  border: 2px solid #ddd;
+  background: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sortButton:hover {
+  border-color: #007acc;
+}
+
+.activeSort {
+  background: #007acc;
+  color: white;
+  border-color: #007acc;
+}
+
+/* Інформація про заявки */
+.applicationsInfo {
+  margin-bottom: 1rem;
+  color: #666;
+  font-style: italic;
+}
+
+/* Стилі для пагінації */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.pageNumbers {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.pageButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pageButton:hover {
+  background: #f0f0f0;
+}
+
+.activePage {
+  background: #007acc;
+  color: white;
+  border-color: #007acc;
+}
+
+.pageNavButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+  background: white;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.pageNavButton:hover:not(:disabled) {
+  background: #f0f0f0;
+}
+
+.pageNavButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+  .sortButtons {
+    flex-direction: column;
+  }
+  
+  .sortButton {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .pagination {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .pageNumbers {
+    order: -1;
+  }
+}

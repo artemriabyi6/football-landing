@@ -28,10 +28,6 @@ const Hero: React.FC = () => {
 
       <div className={styles.container}>
         <div className={styles.heroContent}>
-          {/* Badge */}
-          <div className={styles.heroBadge}>
-            <span>⚽ Професійний підхід</span>
-          </div>
 
           {/* Main Title */}
           <h1 className={styles.heroTitle}>
