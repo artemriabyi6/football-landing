@@ -1,0 +1,46 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("STORAGE_DATABASE_URL")
+}
+
+model Course {
+  id          Int        @id @default(autoincrement())
+  title       String     @db.VarChar(255)
+  description String?
+  level       String     @db.VarChar(50)
+  duration    String     @db.VarChar(50)
+  price       String     @db.VarChar(50)
+  icon        String     @db.VarChar(10)
+  createdAt   DateTime   @default(now())
+  applications Application[]
+
+  @@map("courses")
+}
+
+model Application {
+  id        Int      @id @default(autoincrement())
+  courseId  Int?     // ЗМІНА: зроблено опціональним
+  name      String   @db.VarChar(255)
+  email     String   @db.VarChar(255)
+  phone     String   @db.VarChar(20)
+  message   String?
+  status    String   @default("pending") @db.VarChar(20)
+  createdAt DateTime @default(now())
+  course    Course?  @relation(fields: [courseId], references: [id], onDelete: Cascade) // ЗМІНА: курс опціональний
+
+  @@map("applications")
+}
+
+model Admin {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique @db.VarChar(255)
+  password  String   @db.VarChar(255)
+  name      String   @db.VarChar(255)
+  createdAt DateTime @default(now())
+
+  @@map("admins")
+}
